@@ -1,0 +1,40 @@
+# --- Secrets & credentials (never commit these) ---
+.env
+*.pem
+*.key
+.aws/
+credentials
+*.tfvars
+*.tfvars.json
+
+# --- Terraform ---
+# State files can contain secrets and account details.
+# NOTE: .terraform.lock.hcl SHOULD be committed (pins provider versions).
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# --- Raw AWS enumeration output ---
+# Real snapshots contain account IDs, ARNs and policy documents.
+# Commit only a sanitized sample under data/sample/.
+data/raw/
+*.raw.json
+
+# --- Python ---
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
